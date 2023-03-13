@@ -1,3 +1,8 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://do9core.github.io/'
+languageCode = 'zh-cn'
+title = 'do9core@ray-base.org'
+theme = 'terminal'
+
+[params]
+themeColor = 'green'
+centerTheme = true
