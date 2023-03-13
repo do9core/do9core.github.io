@@ -3,6 +3,24 @@ languageCode = 'zh-cn'
 title = 'do9core@ray-base.org'
 theme = 'terminal'
 
+[menu]
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about"
+[[menu.main]]
+identifier = "archives"
+name = "Archives"
+url = "/archives"
+[[menu.main]]
+identifier = "github"
+name = "Github"
+url = "https://github.com/do9core"
+
 [params]
 themeColor = 'green'
 centerTheme = true
+
+[params.logo]
+logoText = "do9core@ray-base.org: ~$"
+logoHomeLink = "/"
