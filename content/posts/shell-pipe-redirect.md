@@ -11,11 +11,15 @@ readingTime = true
 
 ### Linux命令执行过程
 
-```mermaid
-graph LR
-i[File/Device]==>|stdin|cmd[Shell Command]
-cmd==>|stdout|o[File/Device]
-cmd==>|stderr|e[File/Device]
+```goat
++-------------+ stdin   +---------------+  stdout  +-------------+
+| File/Device +-------->| Shell Command +--------->| File/Device |
++-------------+         +-------+-------+          +-------------+
+                                |stderr
+                                v
+                        +---------------+
+                        |  File/Device  |
+                        +---------------+
 ```
 
 Linux中，万物皆文件，执行命令的过程也是如此。  
@@ -91,9 +95,10 @@ cmd 2>&1 > output.file
 了解了重定向和输入、输出后，再理解管道就显得非常容易。
 管道使用`|`描述，实际使用方法为`cmd1 | cmd2 | cmd3`，管道的意义是将上一个命令的stdout作为下一个命令的stdin，实现连续执行命令的效果：
 
-```mermaid
-graph LR
-cmd1==>|stdout or stdin|cmd2==>|stdout or stdin|cmd3
+```goat
++------+ stdout/stdin  +------+ stdout/stdin  +------+
+| cmd1 +-------------->| cmd2 +-------------->| cmd3 |
++------+               +------+               +------+
 ```
 
 遇到执行错误的情况，会发生什么？
@@ -101,4 +106,4 @@ cmd1==>|stdout or stdin|cmd2==>|stdout or stdin|cmd3
 
 ## 总结
 
-懒得写了
+懒得写了，其实整篇都在总结。

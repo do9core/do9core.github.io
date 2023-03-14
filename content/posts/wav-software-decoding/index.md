@@ -71,4 +71,28 @@ $BytePosition={ByteRate\times{time} - (ByteRate\times{time}\mod{BlockAlign})}$
 
 ## 裁剪流程
 
-[如图所示](wav-clip.pdf)
+```goat
+             Source File             Clip File
+            +-----------+          +-----------+
+            |           |          |           |
+            |           |          |           |
+            +-----------+          +-----------+
+            | File size |=========>| New size  |
+            +-----------+          +-----------+
+            |           |          |           |
+            |           |          |           |
+            +-----------+          +-----------+
+ Header end | Data size |=========>| New size  |
+- - - - - - +-----------+- - - - - +-----------+
+            |           |          | Data to   |
+ Clip start |           |     .--->| Clip      |
+------------+-----------+    /     |           |
+     [1]    | Data to   |   /      +-----------+
+            | Clip      +--.
+ Clip end   |           |
+------------+-----------+
+```
+
+备注：
+
+1. 使用`比特率*时间`分别计算起始和结束字节的位置
