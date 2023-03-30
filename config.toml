@@ -1,6 +1,6 @@
 baseURL = 'https://do9core.github.io/'
 languageCode = 'zh-cn'
-title = 'do9core@ray-base.org'
+title = 'do9core@wolframe.org'
 theme = 'terminal'
 
 [menu]
@@ -22,5 +22,5 @@ themeColor = 'green'
 centerTheme = true
 
 [params.logo]
-logoText = "do9core@ray-base.org: ~$"
+logoText = "do9core@wolframe.org: ~$"
 logoHomeLink = "/"
